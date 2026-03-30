@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Greenfoot
+GenericName=Java IDE
+Comment=An educational IDE for Java
+# Exec=env GDK_BACKEND=x11 greenfoot %u
+Exec=env GDK_BACKEND=wayland greenfoot %u
+Icon=greenfoot
+Categories=Development;IDE;Java;Education;
+Terminal=false
+StartupNotify=true
+StartupWMClass=bluej.Boot$App
+MimeType=application/x-greenfoot.package;

@@ -1,0 +1,29 @@
+#!/bin/bash
+set -euo pipefail
+
+GREENFOOT_HOME="/opt/greenfoot"
+JAVA="${GREENFOOT_HOME}/jdk/bin/java"
+JAVAFX_HOME="${GREENFOOT_HOME}/javafx"
+
+# Build classpath: boot.jar + all JavaFX JARs
+CP="${GREENFOOT_HOME}/lib/boot.jar"
+for j in "${JAVAFX_HOME}/lib"/javafx*.jar; do
+  CP="${CP}:${j}"
+done
+
+# Optional: graphics workarounds
+#   PRISM_ORDER=sw   -> software rendering
+#   GDK_BACKEND=x11  -> force X11 (instead of Wayland)
+exec env \
+  ${GDK_BACKEND:+GDK_BACKEND="${GDK_BACKEND}"} \
+  "${JAVA}" \
+  -Xmx512M \
+  -Dawt.useSystemAAFontSettings=on \
+  -Djavafx.embed.singleThread=true \
+  ${PRISM_ORDER:+-Dprism.order="${PRISM_ORDER}"} \
+  -cp "${CP}" \
+  bluej.Boot \
+  -greenfoot=true \
+  -bluej.compiler.showunchecked=false \
+  -javafxpath="${JAVAFX_HOME}" \
+  "$@"
