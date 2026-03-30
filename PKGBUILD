@@ -1,12 +1,13 @@
-# Maintainer: TBA
+# Maintainer: Mic Leh <[EMAIL_ADDRESS]>
 pkgname=greenfoot-standalone-bin
 pkgver=3.9.0
 pkgrel=1
-pkgdesc="Interactive Java development environment, standalone version with bundled JDK and JavaFX (binary repackaging)"
+pkgdesc="Standalone repackaging of Greenfoot IDE with bundled JDK and JavaFX"
 arch=('x86_64')
 url="https://www.greenfoot.org/"
-license=('custom' 'GPL2')
-provides=('greenfoot' 'greenfoot-standalone-bin')
+license=('GPL-2.0-only' 'GPL-2.0-only WITH Classpath-exception-2.0')
+provides=('greenfoot')
+conflicts=('greenfoot')
 
 depends=(
   'bash'

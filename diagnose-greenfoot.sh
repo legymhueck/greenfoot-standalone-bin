@@ -44,9 +44,16 @@ echo "== Starting Greenfoot with JavaFX verbose logging (close the app afterward
 echo "Tip: If it misbehaves under Wayland, use: GDK_BACKEND=x11 $0"
 echo
 # JAVA_TOOL_OPTIONS is automatically evaluated and then removed by the JVM
+env_args=()
+if [[ -n "${GDK_BACKEND:-}" ]]; then
+  env_args+=("GDK_BACKEND=$GDK_BACKEND")
+fi
+if [[ -n "${PRISM_ORDER:-}" ]]; then
+  env_args+=("PRISM_ORDER=$PRISM_ORDER")
+fi
+
 env JAVA_TOOL_OPTIONS="-Dprism.verbose=true" \
-    ${GDK_BACKEND:+GDK_BACKEND="${GDK_BACKEND}"} \
-    ${PRISM_ORDER:+PRISM_ORDER="${PRISM_ORDER}"} \
+    "${env_args[@]}" \
     greenfoot || true
 
 echo

@@ -9,10 +9,19 @@ JAVAFX_MODS="javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.medi
 # Optional: workarounds (set only when needed)
 #   PRISM_ORDER=sw   -> software rendering
 #   GDK_BACKEND=x11  -> force X11
-exec env \
-  ${GDK_BACKEND:+GDK_BACKEND="${GDK_BACKEND}"} \
+env_args=()
+if [[ -n "${GDK_BACKEND:-}" ]]; then
+  env_args+=("GDK_BACKEND=$GDK_BACKEND")
+fi
+
+java_args=()
+if [[ -n "${PRISM_ORDER:-}" ]]; then
+  java_args+=("-Dprism.order=$PRISM_ORDER")
+fi
+
+exec env "${env_args[@]}" \
   "${JAVA}" \
-  ${PRISM_ORDER:+-Dprism.order="${PRISM_ORDER}"} \
+  "${java_args[@]}" \
   -Dawt.useSystemAAFontSettings=on \
   --module-path "${JAVAFX_HOME}/lib" \
   --add-modules "${JAVAFX_MODS}" \
