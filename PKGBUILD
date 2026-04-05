@@ -33,10 +33,10 @@ source=(
   'openjdk-21.0.2_linux-x64_bin.tar.gz::https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_linux-x64_bin.tar.gz'
   'openjfx-21.0.10_linux-x64_bin-sdk.zip::https://download2.gluonhq.com/openjfx/21.0.10/openjfx-21.0.10_linux-x64_bin-sdk.zip'
 )
-sha256sums=('2ac4b25263cd472244eb5239b273ef4a149ca119e0de81ef2525a1a31d885898'
+sha256sums=('57e26cddce5e87a44348e27c50c71470247256536fd60bca727d4d6fff2eeb9c'
             'e7f59d1c908d47773e778c11ceeb90a57dd74fa57f6d0c39fcfda7ce0ec282b8'
             '16d1ae0af2ddefa9d0af8c6c28eda424aa8200a985cf0eeb4d29f612f80ea2c8'
-            '4bab045a81511ce136b4f5a12a14cca1d499bac941b9e6c181559b217eafb53b'
+            'd6757cdd64357152585a312f8ba536a4ab66d7f4506ffed4cbc524a58c685015'
             'd355c03a3284631aac9f10bd37be9a0341240206ae8aa87d7ea36cdffd6d12e6'
             'a2def047a73941e01a73739f92755f86b895811afb1f91243db214cff5bdac3f'
             '1d47e3291092145e2361b445a42dabcfbb89dcc9e1060ff4b8dfab64b9913fb4')
