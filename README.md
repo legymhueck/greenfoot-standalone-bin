@@ -1,7 +1,12 @@
 # Greenfoot
 
-Greenfoot is an Interactive Java development environment.
+Interactive Java development environment.
 
-This standalone version is bundled with the Greenfoot jar installer package, and the openjdk and openjfx packages.
+This is a standalone version that does not take the distro's JDK or JFX packages (which cause UI errors).
 
-Everything has been repackaged so that Greenfoot no longer depends on the installed and active versions of OpenJDK and OpenJFX.
+- bundled with the [Greenfoot jar installer package]((https://www.greenfoot.org/download)
+- [openjdk](https://www.oracle.com/java/technologies/downloads/#java21)
+- [openjfx](https://download2.gluonhq.com/openjfx/21.0.12/openjfx-21.0.12_linux-x64_bin-sdk.zip)
+
+- [Greenfoot](https://www.greenfoot.org/door)
+- [Greenfoot download](https://www.greenfoot.org/download)
